@@ -1,6 +1,6 @@
 // prettier-ignore
 import { AppBar, Badge, Divider, Drawer as DrawerMui, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography, useMediaQuery } from "@material-ui/core";
-import { Theme } from "@material-ui/core/styles";
+import { Theme, useTheme } from "@material-ui/core/styles";
 import FormatListNumberedIcon from "@material-ui/icons/FormatListNumbered";
 import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -57,10 +57,9 @@ function Drawer(props: { todoList: Todo[] }) {
 function App() {
 	const classes = useStyles();
 	const [mobileOpen, setMobileOpen] = React.useState(true);
-	const todoList = useSelector((state: RootState) => state.todoList);
-	const isMobile = useMediaQuery((theme: Theme) =>
-		theme.breakpoints.down("sm")
-	);
+  const todoList = useSelector((state: RootState) => state.todoList);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.up('sm'));
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
