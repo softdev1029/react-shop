@@ -50,13 +50,13 @@ npm start
 Just comment in the following line in the `index.tsx`:
 
 ```javascript
-// registerServiceWorker();
+// registerServiceWorker()
 ```
 
 to
 
 ```javascript
-registerServiceWorker();
+registerServiceWorker()
 ```
 
 ## Enable Prettier [OPTIONAL]

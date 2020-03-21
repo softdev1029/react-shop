@@ -1,7 +1,7 @@
 export interface Todo {
-  id: number;
-  text: string;
-  completed: boolean;
+  id: number
+  text: string
+  completed: boolean
 }
 
 export enum TodoActions {
@@ -12,8 +12,8 @@ export enum TodoActions {
 }
 
 interface TodoActionType<T, P> {
-  type: T;
-  payload: P;
+  type: T
+  payload: P
 }
 
 export type TodoAction =
@@ -21,4 +21,4 @@ export type TodoAction =
   | TodoActionType<typeof TodoActions.COMPLETE_TODO, number>
   | TodoActionType<typeof TodoActions.UNCOMPLETE_TODO, number>
   | TodoActionType<typeof TodoActions.DELETE_TODO, number>
-;
+
