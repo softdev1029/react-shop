@@ -2,7 +2,7 @@ import { Button, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import * as React from "react"
 import { useSelector } from "react-redux"
-import { HomeBox } from "../components"
+import { HomeBox, FetchBox } from "../components"
 import { RootState } from "../reducers"
 
 export function HomePage() {
@@ -16,8 +16,9 @@ export function HomePage() {
   return (
     <div className={classes.root}>
       <Typography variant="h4" gutterBottom>
-        You have {todoList.length} TODOs in your list!
+        You have {todoList.length} TODOs in your list
       </Typography>
+      <FetchBox />
       <div className={classes.centerContainer}>
         <HomeBox size={300} color={boxColor} />
         <Button
